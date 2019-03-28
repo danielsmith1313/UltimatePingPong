@@ -51,4 +51,15 @@ public class Racquet
       if(e.getKeyCode() == KeyEvent.VK_RIGHT)
          MoveX = 1;
    }
+   
+   //Used by ball to get location of racquet
+   public Rectangle getBounds()
+   {
+      return new Rectangle(RacquetX, RACQUET_Y, WIDTH, HEIGHT);
+   }
+   
+   public int getTopY()
+   {
+      return RACQUET_Y;
+   }
 }
