@@ -1,9 +1,10 @@
 import java.awt.Graphics2D;
-
+import java.awt.Rectangle;
 public class Ball
 {
    private final int BALL_DIAMETER = 30;
    private final int TOP_LEFT_BORDER = 0;
+   private static final int SIZE = 30;
    private int BallX = 0;
    private int BallY = 0;
    private int MoveX = 1;
@@ -48,10 +49,21 @@ public class Ball
       BallY = BallY + MoveY;
    }
    
+   // If the ball runs into the racquet, return true
+   private boolean collision()
+   {
+      return game.racquet.getBounds().intersects(getBounds());
+   }
+   
    // Create the ball/circle
    public void paint(Graphics2D g)
    {
       // Paint new position of the ball
-      g.fillOval(BallX, BallY, BALL_DIAMETER, BALL_DIAMETER);
+      g.fillOval(BallX, BallY, SIZE, SIZE);
+   }
+   
+   public Rectangle getBounds()
+   {
+      return new Rectangle(BallX, BallY, BALL_DIAMETER, BALL_DIAMETER);
    }
 }
