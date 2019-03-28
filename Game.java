@@ -17,7 +17,8 @@ public class Game extends JPanel
    final static int GAME_HEIGHT = 400;
    
    // Variables for the speed of the game
-   static int gameSpeed = 9;
+   
+   static int gameSpeed = 10;
    // Create a Ball object
    Ball ball = new Ball(this);
    
